@@ -89,29 +89,6 @@ export const updateProductStockQuantity = async (
   }
 };
 
-// export const updateProduct = async (
-//   req: Request,
-//   res: Response
-// ): Promise<void> => {
-//   const { productId } = req.params; // Check this value
-//   const { name, price, rating, stockQuantity } = req.body;
- 
-//   try {
-//     console.log("Updating Product with ID:", productId); // Debugging log
-//     console.log("Received Data:", req.body); // Debugging log
-//        // Update the product
-//     const updatedProduct = await prisma.products.update({
-//       where: { productId: String(productId) },
-//       data: { name, price, rating, stockQuantity },
-      
-//     });
-
-//     res.status(200).json(updatedProduct);
-//   } catch (error) {
-//     console.error("Error updating product:", error);
-//     res.status(500).json({ message: "Error updating product" });
-//   }
-// };
 
 
 

@@ -15,7 +15,7 @@ const CreatePurchase = () => {
   const [unitCost, setUnitCost] = useState(0);
   const [location, setLocation] = useState('');
   const [totalCost, setTotalCost] = useState(0);
-
+  
   // Fetch product data for the dropdown
   const { data: products = [], error: productError } = useGetProductsQuery();
 

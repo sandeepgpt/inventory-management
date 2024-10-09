@@ -96,6 +96,12 @@ export interface User {
   name: string;
   email: string;
 }
+export interface NewUser {
+  userId: string;
+  name: string;
+  email: string;
+}
+
 
 export const api = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_API_BASE_URL }),
@@ -153,6 +159,17 @@ export const api = createApi({
       query: () => "/users",
       providesTags: ["Users"],
     }),
+    createUser: build.mutation<User, NewUser>({
+      query: (newUser) => ({
+        url: "/users",
+        method: "POST",
+        body: newUser,
+      }),
+      invalidatesTags: ["Users"],
+    }),
+
+
+
     getExpensesByCategory: build.query<ExpenseByCategorySummary[], void>({
       query: () => "/expenses",
       providesTags: ["Expenses"],
@@ -204,6 +221,7 @@ export const {
   useUpdateProductStockQuantityMutation,
   useDeleteProductMutation,
   useGetUsersQuery,
+  useCreateUserMutation,
   useGetSalesQuery,
   useCreateSaleMutation,
   useGetPurchasesQuery,
