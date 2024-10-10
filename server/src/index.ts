@@ -31,13 +31,13 @@ app.use("/expenses", expenseRoutes); // http://localhost:8000/expenses
 app.use("/sales", saleRoutes); //http://localhost:8000/sales
 app.use("/purchases", purchaseRoutes); //http://localhost:8000/purchases
 
-const port = process.env.PORT || 3001;
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
-
-/* SERVER */
-//const port = Number(process.env.PORT) || 3001;
-// app.listen(port, "0.0.0.0", () => {
+// const port = process.env.PORT || 3001;
+// app.listen(port, () => {
 //   console.log(`Server running on port ${port}`);
 // });
+
+/* SERVER */
+const port = Number(process.env.PORT) || 3001;
+app.listen(port, "0.0.0.0", () => {
+  console.log(`Server running on port ${port}`);
+});
